@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOTOBONAS — Oficina e Peças para Motos em Fortaleza</title>
+<meta name="description" content="Oficina especializada e peças premium para motos de média e alta cilindrada em Fortaleza/CE. Revisão de precisão, diagnóstico eletrônico e peças de qualidade. Chame no WhatsApp.">
+<meta name="theme-color" content="#0a0806">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MOTOBONAS — Oficina e Peças para Motos">
+<meta property="og:description" content="Sua moto no nível que ela merece. Oficina especializada e peças premium em Fortaleza/CE.">
+<meta property="og:image" content="https://motobonas.vercel.app/assets/hero.webp">
+<link rel="icon" type="image/png" href="assets/logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"AutoRepair","name":"Moto Bonas Peças Acessórios Serviços","telephone":"+55-85-99400-2002","address":{"@type":"PostalAddress","streetAddress":"R 24 de Maio, 1102","addressLocality":"Fortaleza","addressRegion":"CE","postalCode":"60020-000","addressCountry":"BR"},"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.6","reviewCount":"114"},"url":"https://motobonas.vercel.app","priceRange":"$$"}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Vocês atendem qual cilindrada?","acceptedAnswer":{"@type":"Answer","text":"Atendemos motos de todas as cilindradas, com especialidade em média e alta — acima de 300cc: naked, big trail e esportivas."}},
+{"@type":"Question","name":"Preciso agendar ou posso só chegar?","acceptedAnswer":{"@type":"Answer","text":"Trabalhamos com hora marcada para garantir atendimento sem espera. Chame no WhatsApp (85) 99400-2002."}},
+{"@type":"Question","name":"As peças são originais?","acceptedAnswer":{"@type":"Answer","text":"Sim. Peças originais e linhas premium, sempre com procedência garantida."}},
+{"@type":"Question","name":"Vocês vendem peças avulsas?","acceptedAnswer":{"@type":"Answer","text":"Sim, na loja física em Fortaleza/CE e no Mercado Livre, com envio para todo o Brasil."}}
+]}
+</script>
+<!-- Google Ads: cole a tag global (gtag.js) aqui. O formulário e os botões de WhatsApp já disparam o evento 'conversion' quando o gtag existir. -->
+<style>
+:root{
+  --bg:#0a0806; --bg2:#100c08; --ink:#f4ede1; --ink-dim:#b9ab93;
+  --amber:#ff7a1a; --ember:#ff4d00; --rust:#c23c0d;
+  --line:rgba(244,237,225,.14); --line-soft:rgba(244,237,225,.07);
+  --font-d:'Anton',sans-serif; --font-b:'Archivo',sans-serif; --font-m:'Space Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-b);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+::selection{background:var(--ember);color:#fff}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ---------- atmosphere ---------- */
+#embers{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.85}
+.grain{position:fixed;inset:-50%;z-index:60;pointer-events:none;opacity:.055;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 8s steps(10) infinite}
+@keyframes grain{0%,100%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-2%)}80%{transform:translate(3%,3%)}}
+.vignette{position:fixed;inset:0;z-index:59;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.55) 100%)}
+
+/* ---------- header ---------- */
+header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;
+  padding:18px clamp(20px,4vw,56px);transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+header.scrolled{background:rgba(10,8,6,.86);backdrop-filter:blur(14px);border-bottom-color:var(--line-soft)}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{width:46px;height:46px;object-fit:contain}
+.brand .bt{font-family:var(--font-m);font-size:11px;letter-spacing:.22em;line-height:1.5}
+.brand .bt b{color:var(--amber)}
+nav.desk{display:flex;gap:34px;font-family:var(--font-m);font-size:11px;letter-spacing:.2em}
+nav.desk a{opacity:.65;transition:.25s;position:relative}
+nav.desk a:hover{opacity:1;color:var(--amber)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--font-m);font-size:12px;letter-spacing:.14em;
+  padding:15px 28px;border:1px solid var(--amber);color:var(--ink);background:transparent;cursor:pointer;
+  transition:.3s;text-transform:uppercase;position:relative;overflow:hidden}
+.btn::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,var(--ember),var(--amber));
+  transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.7,0,.2,1);z-index:-1}
+.btn:hover::before{transform:scaleX(1)}
+.btn:hover{color:#0a0806;border-color:transparent;font-weight:700}
+.btn.solid{background:linear-gradient(120deg,var(--ember),var(--amber));color:#0a0806;font-weight:700;border-color:transparent}
+.btn.solid::before{background:#f4ede1}
+.burger{display:none;background:none;border:0;cursor:pointer;z-index:70}
+.burger span{display:block;width:26px;height:2px;background:var(--ink);margin:6px 0;transition:.3s}
+.mnav{display:none}
+
+/* ---------- layout ---------- */
+.wrap{max-width:1440px;margin:0 auto;padding:0 clamp(20px,4vw,56px);position:relative;z-index:1}
+section{position:relative;padding:clamp(90px,12vh,150px) 0}
+.kicker{font-family:var(--font-m);font-size:11px;letter-spacing:.32em;color:var(--amber);text-transform:uppercase;
+  display:flex;align-items:center;gap:16px;margin-bottom:28px}
+.kicker::before{content:'';width:44px;height:1px;background:var(--amber)}
+.chap{font-family:var(--font-m);font-size:11px;letter-spacing:.3em;color:var(--ink-dim);margin-bottom:14px;display:block}
+h1,h2{font-family:var(--font-d);text-transform:uppercase;line-height:.94;letter-spacing:.01em;font-weight:400}
+.h-display{font-size:clamp(58px,11vw,168px)}
+.h-sec{font-size:clamp(44px,7vw,104px);margin-bottom:26px}
+.h-sec .accent{color:transparent;-webkit-text-stroke:1.5px var(--amber)}
+.lead{font-size:clamp(16px,1.6vw,20px);line-height:1.7;color:var(--ink-dim);max-width:56ch}
+.rule{height:1px;background:var(--line);margin:clamp(40px,6vh,70px) 0}
+
+/* word reveal */
+.w{display:inline-block;overflow:hidden;vertical-align:bottom}
+.w>span{display:inline-block;transform:translateY(110%);transition:transform .9s cubic-bezier(.16,1,.3,1)}
+.in .w>span{transform:translateY(0)}
+.rise{opacity:0;transform:translateY(36px);transition:opacity .9s ease,transform .9s cubic-bezier(.16,1,.3,1)}
+.rise.in{opacity:1;transform:none}
+
+/* ---------- hero ---------- */
+.hero{min-height:100svh;display:flex;align-items:flex-end;padding-bottom:clamp(60px,10vh,110px);overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:-1}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:70% center;opacity:.9;transform:scale(1.06)}
+.hero-bg::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(90deg,rgba(10,8,6,.96) 22%,rgba(10,8,6,.55) 55%,rgba(10,8,6,.15) 100%),
+             linear-gradient(0deg,var(--bg) 4%,transparent 40%)}
+.hero .meta{font-family:var(--font-m);font-size:11px;letter-spacing:.26em;color:var(--ink-dim);margin-bottom:22px;
+  display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.hero .meta i{font-style:normal;color:var(--ember)}
+.hero p.sub{margin:30px 0 40px;max-width:52ch}
+.cta-row{display:flex;gap:18px;flex-wrap:wrap}
+.scroll-cue{position:absolute;bottom:34px;right:clamp(20px,4vw,56px);font-family:var(--font-m);font-size:10px;
+  letter-spacing:.3em;color:var(--ink-dim);writing-mode:vertical-rl;display:flex;align-items:center;gap:12px}
+.scroll-cue::after{content:'';width:1px;height:56px;background:linear-gradient(var(--amber),transparent);animation:cue 2s ease-in-out infinite}
+@keyframes cue{0%,100%{transform:scaleY(.4);transform-origin:top}50%{transform:scaleY(1)}}
+.rail{position:fixed;right:clamp(14px,2.4vw,34px);top:50%;transform:translateY(-50%);z-index:40;display:flex;
+  flex-direction:column;gap:18px}
+.rail a{font-family:var(--font-m);font-size:10px;letter-spacing:.18em;color:var(--ink-dim);opacity:.45;transition:.3s;
+  display:flex;align-items:center;gap:10px;justify-content:flex-end}
+.rail a::after{content:'';width:26px;height:1px;background:currentColor;transition:.3s}
+.rail a.active{opacity:1;color:var(--amber)}
+.rail a.active::after{width:44px}
+
+/* ---------- marquee ---------- */
+.marquee{border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);overflow:hidden;
+  padding:20px 0;background:rgba(255,122,26,.02);position:relative;z-index:1}
+.marquee .lbl{font-family:var(--font-m);font-size:10px;letter-spacing:.3em;color:var(--ink-dim);text-align:center;
+  margin-bottom:14px}
+.marquee-track{display:flex;gap:0;width:max-content;animation:mscroll 30s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.mq-set{display:flex;align-items:center;flex-shrink:0}
+.mq-set span{font-family:var(--font-d);font-size:clamp(22px,3.2vw,38px);text-transform:uppercase;white-space:nowrap;
+  padding:0 26px;color:transparent;-webkit-text-stroke:1px rgba(244,237,225,.5)}
+.mq-set span.fill{color:var(--amber);-webkit-text-stroke:0}
+.mq-set i{font-style:normal;color:var(--ember);font-size:20px}
+@keyframes mscroll{to{transform:translateX(-50%)}}
+
+/* ---------- steps ---------- */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);
+  border:1px solid var(--line-soft);margin-top:56px}
+.step{background:var(--bg);padding:36px 30px;position:relative;transition:.3s}
+.step:hover{background:var(--bg2)}
+.step .sn{font-family:var(--font-d);font-size:56px;color:transparent;-webkit-text-stroke:1.5px var(--amber);
+  display:block;margin-bottom:18px}
+.step h3{font-size:18px;font-weight:700;margin-bottom:10px;letter-spacing:.02em}
+.step p{font-size:14px;color:var(--ink-dim);line-height:1.7}
+.step .sa{display:inline-block;margin-top:16px;font-family:var(--font-m);font-size:11px;letter-spacing:.18em;
+  color:var(--amber)}
+
+/* ---------- flagship ---------- */
+.flagship{margin-top:56px;border:1px solid rgba(255,122,26,.45);position:relative;overflow:hidden;
+  background:linear-gradient(135deg,rgba(255,77,0,.09),rgba(255,122,26,.02) 60%);padding:clamp(30px,4vw,54px)}
+.flagship::before{content:'CARRO-CHEFE';position:absolute;top:24px;right:-38px;transform:rotate(35deg);
+  background:linear-gradient(120deg,var(--ember),var(--amber));color:#0a0806;font-family:var(--font-m);
+  font-size:10px;letter-spacing:.2em;font-weight:700;padding:8px 46px}
+.flagship h3{font-family:var(--font-d);font-size:clamp(30px,4.4vw,58px);text-transform:uppercase;margin-bottom:14px}
+.flagship h3 span{color:var(--amber)}
+.flag-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,60px);margin:26px 0 28px}
+.benefits{list-style:none;display:grid;gap:14px;align-content:start}
+.benefits li{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:1.6}
+.benefits li::before{content:'▸';color:var(--amber);font-weight:700;flex-shrink:0}
+.flagship .anti{border-left:2px solid var(--ember);padding-left:18px;color:var(--ink-dim);font-size:15px;
+  line-height:1.7;margin-bottom:32px;max-width:64ch}
+
+/* ---------- checklist ---------- */
+.checklist{margin-top:64px}
+.checklist h3{font-family:var(--font-d);font-size:clamp(24px,3vw,40px);text-transform:uppercase;margin-bottom:24px}
+.checklist h3 span{color:var(--amber)}
+.check-grid{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;
+  background:var(--line-soft);border:1px solid var(--line-soft)}
+.check-grid li{background:var(--bg);padding:18px 20px;font-size:14px;display:flex;gap:12px;
+  align-items:flex-start;line-height:1.55}
+.check-grid li::before{content:'✓';color:var(--amber);font-weight:700;flex-shrink:0}
+
+/* ---------- reviews ---------- */
+.reviews-head{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin:40px 0 34px;
+  padding:26px 30px;border:1px solid var(--line-soft);background:var(--bg2)}
+.reviews-head .score{font-family:var(--font-d);font-size:64px;line-height:1}
+.reviews-head .stars{color:var(--amber);font-size:22px;letter-spacing:4px}
+.reviews-head .meta{font-family:var(--font-m);font-size:11px;letter-spacing:.18em;color:var(--ink-dim);line-height:2}
+.reviews-head .meta b{color:var(--ink)}
+.reviews-head .g{margin-left:auto;font-family:var(--font-m);font-size:11px;letter-spacing:.2em;color:var(--ink-dim);
+  display:flex;align-items:center;gap:10px}
+.rev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.rev{background:var(--bg2);border:1px solid var(--line-soft);padding:28px 26px;display:flex;
+  flex-direction:column;gap:14px;transition:.3s}
+.rev:hover{border-color:rgba(255,122,26,.4);transform:translateY(-4px)}
+.rev .stars{color:var(--amber);font-size:15px;letter-spacing:3px}
+.rev .txt{font-size:14.5px;line-height:1.7;color:var(--ink-dim);flex:1}
+.rev .txt .more{color:var(--amber);cursor:pointer;font-family:var(--font-m);font-size:11px;letter-spacing:.14em}
+.rev .who{display:flex;align-items:center;gap:12px}
+.rev .ava{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--ember),var(--amber));
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;color:#0a0806;flex-shrink:0}
+.rev .who .n{font-weight:700;font-size:14px}
+.rev .who .d{font-family:var(--font-m);font-size:10px;letter-spacing:.14em;color:var(--ink-dim)}
+
+/* ---------- 3D viewer ---------- */
+.mv-wrap{position:relative;margin-top:48px;border:1px solid var(--line-soft);overflow:hidden;
+  background:radial-gradient(ellipse 80% 60% at 50% 42%,rgba(255,122,26,.10),transparent 70%),var(--bg2)}
+model-viewer{width:100%;height:clamp(440px,72vh,740px);--poster-color:transparent;display:block;--progress-bar-color:var(--amber)}
+.mv-wrap .tag{position:absolute;left:18px;bottom:16px;font-family:var(--font-m);font-size:10px;letter-spacing:.24em;
+  background:rgba(10,8,6,.72);padding:10px 16px;border:1px solid var(--line-soft);backdrop-filter:blur(6px);pointer-events:none}
+.mv-hint{position:absolute;right:18px;top:16px;font-family:var(--font-m);font-size:10px;letter-spacing:.24em;
+  color:var(--ink-dim);pointer-events:none}
+.model-credit{font-family:var(--font-m);font-size:10px;letter-spacing:.14em;color:var(--ink-dim);margin-top:14px}
+.model-credit a{color:var(--amber);border-bottom:1px solid var(--amber)}
+
+/* ---------- faq ---------- */
+.faq{margin-top:44px;border-top:1px solid var(--line);max-width:920px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;
+  gap:20px;padding:24px 6px;font-weight:700;font-size:clamp(16px,1.8vw,19px);transition:.25s}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-family:var(--font-m);color:var(--amber);font-size:24px;flex-shrink:0;
+  transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq summary:hover{color:var(--amber);padding-left:14px}
+.faq .a{padding:0 6px 26px;color:var(--ink-dim);line-height:1.75;font-size:15.5px;max-width:72ch}
+
+/* ---------- services ---------- */
+.svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:start;margin-top:56px}
+.svc-img{position:relative;overflow:hidden}
+.svc-img img{width:100%;height:clamp(340px,60vh,620px);object-fit:cover;filter:saturate(.92) contrast(1.05)}
+.svc-img::after{content:'';position:absolute;inset:0;box-shadow:inset 0 0 120px rgba(10,8,6,.7)}
+.svc-img .tag{position:absolute;left:18px;bottom:16px;font-family:var(--font-m);font-size:10px;letter-spacing:.24em;
+  background:rgba(10,8,6,.72);padding:10px 16px;border:1px solid var(--line-soft);backdrop-filter:blur(6px)}
+.svc-list{border-top:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:64px 1fr auto;gap:20px;align-items:baseline;padding:26px 6px;
+  border-bottom:1px solid var(--line);transition:.3s;cursor:default}
+.svc:hover{background:rgba(255,122,26,.05);padding-left:16px}
+.svc .n{font-family:var(--font-m);font-size:12px;color:var(--amber);letter-spacing:.1em}
+.svc h3{font-family:var(--font-b);font-weight:700;font-size:clamp(17px,1.6vw,21px);letter-spacing:.02em;margin-bottom:8px}
+.svc p{font-size:14.5px;color:var(--ink-dim);line-height:1.65}
+.svc .go{font-family:var(--font-m);font-size:18px;color:var(--amber);opacity:0;transition:.3s}
+.svc:hover .go{opacity:1}
+
+/* ---------- statement ---------- */
+.statement{background:var(--bg2);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);
+  overflow:hidden}
+.statement .big{font-family:var(--font-d);font-size:clamp(52px,10vw,150px);text-transform:uppercase;line-height:.95}
+.statement .big .o{color:transparent;-webkit-text-stroke:1.5px var(--ink)}
+.statement .cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);margin-top:44px}
+.spec{display:flex;gap:16px;align-items:flex-start;padding:20px 0;border-top:1px solid var(--line-soft)}
+.spec .dot{width:9px;height:9px;background:var(--ember);border-radius:50%;margin-top:6px;flex-shrink:0;box-shadow:0 0 14px var(--ember)}
+.spec p{font-size:15px;line-height:1.7;color:var(--ink-dim)}
+.spec p b{color:var(--ink)}
+
+/* ---------- parts ---------- */
+.parts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);margin-top:54px}
+.part{background:var(--bg);padding:34px 26px;transition:.35s;position:relative;overflow:hidden}
+.part::after{content:'';position:absolute;left:0;bottom:0;height:2px;width:100%;background:linear-gradient(90deg,var(--ember),var(--amber));
+  transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.part:hover::after{transform:scaleX(1)}
+.part:hover{background:var(--bg2)}
+.part .pn{font-family:var(--font-m);font-size:10px;letter-spacing:.26em;color:var(--amber);margin-bottom:18px;display:block}
+.part h3{font-size:17px;font-weight:700;margin-bottom:10px;letter-spacing:.02em}
+.part p{font-size:13.5px;color:var(--ink-dim);line-height:1.65}
+.parts-hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,80px);align-items:center;margin-top:60px}
+.parts-hero img{width:100%;height:clamp(280px,44vh,460px);object-fit:cover}
+.ml-link{display:inline-flex;align-items:center;gap:12px;margin-top:26px;font-family:var(--font-m);font-size:12px;
+  letter-spacing:.14em;color:var(--amber);border-bottom:1px solid var(--amber);padding-bottom:6px;transition:.3s}
+.ml-link:hover{gap:20px;color:var(--ink);border-color:var(--ink)}
+
+/* ---------- contact ---------- */
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(36px,6vw,100px);margin-top:50px;align-items:start}
+form{display:grid;gap:18px}
+.field label{display:block;font-family:var(--font-m);font-size:10px;letter-spacing:.26em;color:var(--ink-dim);margin-bottom:10px;text-transform:uppercase}
+.field input,.field select,.field textarea{width:100%;background:rgba(244,237,225,.03);border:1px solid var(--line);
+  color:var(--ink);font-family:var(--font-b);font-size:16px;padding:16px 18px;transition:.3s;border-radius:0;appearance:none}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--amber);background:rgba(255,122,26,.05)}
+.field select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ff7a1a' fill='none' stroke-width='2'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 18px center}
+.field select option{background:#141009}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cinfo{border:1px solid var(--line-soft);padding:clamp(28px,3vw,44px);background:var(--bg2)}
+.cinfo .row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:18px 0;border-bottom:1px solid var(--line-soft);font-size:15px}
+.cinfo .row:last-child{border:0}
+.cinfo .k{font-family:var(--font-m);font-size:10px;letter-spacing:.24em;color:var(--ink-dim)}
+.cinfo .v{font-weight:600}
+.cinfo .v.hot{color:var(--amber);font-size:19px}
+.hours{font-family:var(--font-m);font-size:11px;letter-spacing:.14em;color:var(--ink-dim);line-height:2.1;margin-top:8px}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:70px 0 40px;position:relative;overflow:hidden}
+.foot-big{font-family:var(--font-d);font-size:clamp(64px,14vw,220px);line-height:.9;text-transform:uppercase;
+  color:transparent;-webkit-text-stroke:1px rgba(244,237,225,.22);white-space:nowrap;user-select:none}
+.foot-grid{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-top:44px}
+.foot-grid .m{font-family:var(--font-m);font-size:11px;letter-spacing:.2em;color:var(--ink-dim);line-height:2.2}
+.foot-grid .m b{color:var(--amber)}
+.manifest{font-size:clamp(18px,2.2vw,26px);font-weight:600;max-width:22ch;line-height:1.5;margin-top:34px}
+.manifest em{color:var(--amber);font-style:normal}
+
+/* ---------- sticky booking bar (mobile) ---------- */
+.bookbar{display:none}
+@media(max-width:640px){
+  body{padding-bottom:74px}
+  .bookbar{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:54;align-items:center;
+    justify-content:space-between;gap:12px;padding:12px 16px;
+    background:rgba(10,8,6,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+  .bookbar .t{font-family:var(--font-m);font-size:10px;letter-spacing:.16em;color:var(--ink-dim);line-height:1.7}
+  .bookbar .t b{color:var(--amber);display:block;font-size:11px}
+  .bookbar .btn{padding:13px 20px;font-size:11px;white-space:nowrap}
+}
+
+/* ---------- whatsapp float ---------- */
+.wa-float{position:fixed;right:22px;bottom:22px;z-index:55;width:60px;height:60px;border-radius:50%;
+  background:linear-gradient(135deg,var(--ember),var(--amber));display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 32px rgba(255,77,0,.45);transition:.3s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:30px;height:30px;fill:#0a0806}
+
+/* ---------- responsive ---------- */
+@media(max-width:1024px){
+  .svc-grid,.parts-hero,.contact-grid,.statement .cols,.flag-grid{grid-template-columns:1fr}
+  .parts-grid{grid-template-columns:repeat(2,1fr)}
+  .check-grid{grid-template-columns:repeat(2,1fr)}
+  .rev-grid{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .rail{display:none}
+}
+@media(max-width:640px){
+  nav.desk,.brand .bt{display:none}
+  .burger{display:block}
+  .parts-grid{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
+  .check-grid{grid-template-columns:1fr}
+  .rev-grid{grid-template-columns:1fr}
+  .hero-bg img{object-position:62% center}
+  .mnav{position:fixed;inset:0;background:rgba(10,8,6,.97);z-index:65;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;gap:34px;opacity:0;pointer-events:none;transition:.4s}
+  .mnav.open{opacity:1;pointer-events:auto}
+  .mnav a{font-family:var(--font-d);font-size:38px;text-transform:uppercase}
+  .mnav a.on{color:var(--amber)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .w>span{transform:none}.rise{opacity:1;transform:none}
+  #embers{display:none}html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<canvas id="embers" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+
+<header id="hdr">
+  <a class="brand" href="#topo" aria-label="Motobonas — início">
+    <img src="assets/logo.webp" alt="Motobonas" width="46" height="46">
+    <span class="bt">MOTO<b>BONAS</b><br>PEÇAS · OFICINA</span>
+  </a>
+  <nav class="desk" aria-label="Navegação principal">
+    <a href="#oficina">OFICINA</a>
+    <a href="#altas">ALTAS CC</a>
+    <a href="#pecas">PEÇAS</a>
+    <a href="#contato">CONTATO</a>
+  </nav>
+  <a class="btn" href="https://wa.me/5585994002002?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Motobonas%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" data-wa>WhatsApp</a>
+  <button class="burger" id="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+</header>
+<nav class="mnav" id="mnav" aria-label="Menu móvel">
+  <a href="#oficina">Oficina</a><a href="#altas">Altas CC</a><a href="#pecas">Peças</a><a href="#contato">Contato</a>
+  <a class="on" href="https://wa.me/5585994002002?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Motobonas." target="_blank" rel="noopener" data-wa>WhatsApp</a>
+</nav>
+
+<aside class="rail" aria-label="Capítulos">
+  <a href="#oficina" data-sec="oficina">01 OFICINA</a>
+  <a href="#altas" data-sec="altas">02 ALTAS CC</a>
+  <a href="#pecas" data-sec="pecas">03 PEÇAS</a>
+  <a href="#avaliacoes" data-sec="avaliacoes">04 REVIEWS</a>
+  <a href="#faq" data-sec="faq">05 FAQ</a>
+  <a href="#contato" data-sec="contato">06 CONTATO</a>
+</aside>
+
+<main id="topo">
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"><img src="assets/hero.webp" alt="Motocicleta naked de alta cilindrada sob luz âmbar" fetchpriority="high"></div>
+    <div class="wrap">
+      <p class="meta rise"><i>●</i> OFICINA · PEÇAS · ACESSÓRIOS <i>●</i> FORTALEZA — CE</p>
+      <h1 class="h-display" data-words>SUA MOTO NO NÍVEL QUE ELA MERECE</h1>
+      <p class="sub lead rise">Especialistas em motos de média e alta cilindrada. Revisão de precisão, diagnóstico eletrônico e peças premium — com um atendimento à altura da sua máquina.</p>
+      <div class="cta-row rise">
+        <a class="btn solid" href="https://wa.me/5585994002002?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Motobonas%20e%20quero%20um%20or%C3%A7amento." target="_blank" rel="noopener" data-wa>Chamar no WhatsApp</a>
+        <a class="btn" href="#oficina">Conhecer a oficina</a>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">ROLE</div>
+  </section>
+
+  <!-- MARQUEE: modelos -->
+  <div class="marquee" aria-label="Modelos que atendemos">
+    <p class="lbl">MODELOS QUE PASSAM PELO NOSSO BOX</p>
+    <div class="marquee-track">
+      <div class="mq-set"><span class="fill">MT-03</span><i>✦</i><span>MT-07</span><i>✦</i><span class="fill">MT-09</span><i>✦</i><span>BMW S 1000 RR</span><i>✦</i><span class="fill">YAMAHA R1</span><i>✦</i><span>CB 500F</span><i>✦</i><span class="fill">CB 500X</span><i>✦</i><span>NINJA 400</span><i>✦</i><span class="fill">Z 400</span><i>✦</i><span>HORNET 750</span><i>✦</i><span class="fill">TRANSALP 750</span><i>✦</i><span>CB 650R</span><i>✦</i><span class="fill">DUKE 390</span><i>✦</i><span>G 310 GS</span><i>✦</i><span class="fill">VERSYS 650</span><i>✦</i><span>TIGER 900</span><i>✦</i></div>
+      <div class="mq-set" aria-hidden="true"><span class="fill">MT-03</span><i>✦</i><span>MT-07</span><i>✦</i><span class="fill">MT-09</span><i>✦</i><span>BMW S 1000 RR</span><i>✦</i><span class="fill">YAMAHA R1</span><i>✦</i><span>CB 500F</span><i>✦</i><span class="fill">CB 500X</span><i>✦</i><span>NINJA 400</span><i>✦</i><span class="fill">Z 400</span><i>✦</i><span>HORNET 750</span><i>✦</i><span class="fill">TRANSALP 750</span><i>✦</i><span>CB 650R</span><i>✦</i><span class="fill">DUKE 390</span><i>✦</i><span>G 310 GS</span><i>✦</i><span class="fill">VERSYS 650</span><i>✦</i><span>TIGER 900</span><i>✦</i></div>
+    </div>
+  </div>
+
+  <!-- S1000RR 3D -->
+  <section id="s1000rr">
+    <div class="wrap">
+      <span class="chap">INTERATIVO</span>
+      <p class="kicker">Explore em 3D</p>
+      <h2 class="h-sec" data-words>GIRE. APROXIME. <span class="accent">APAIXONE-SE.</span></h2>
+      <p class="lead rise">A BMW S 1000 RR em 3D interativo — arraste para girar e aproxime cada detalhe da máquina.</p>
+      <div class="mv-wrap rise">
+        <model-viewer src="https://cdn.jsdelivr.net/gh/Matthew0wolf/motobonas1@main/s1000rr-opt.glb" alt="BMW S 1000 RR — modelo 3D interativo"
+          auto-rotate camera-controls loading="lazy"
+          shadow-intensity="1" exposure="1.15" tone-mapping="commerce"
+          camera-orbit="45deg 72deg 4.2m" min-camera-orbit="auto auto 2.2m" max-camera-orbit="auto auto 9m"
+          field-of-view="35deg" interaction-prompt="auto" poster="assets/hero.webp">
+        </model-viewer>
+        <span class="tag">ARRASTE PARA GIRAR</span>
+        <span class="mv-hint">SCROLL = ZOOM</span>
+      </div>
+      <p class="model-credit rise">Modelo 3D: <a href="https://sketchfab.com/3d-models/bmw-s1000-rr-1873aed292d6465694119bd81860a0c2" target="_blank" rel="noopener">VTX via Sketchfab</a> · CC BY-NC-SA</p>
+      <div class="cta-row rise" style="margin-top:34px">
+        <a class="btn solid" href="https://wa.me/5585994002002?text=Ol%C3%A1!%20Vi%20a%20S%201000%20RR%20em%203D%20no%20site%20e%20quero%20falar%20sobre%20minha%20moto." target="_blank" rel="noopener" data-wa>Falar sobre minha moto</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 01 OFICINA -->
+  <section id="oficina">
+    <div class="wrap">
+      <span class="chap">CAPÍTULO 01</span>
+      <p class="kicker">A oficina</p>
+      <h2 class="h-sec" data-words>SERVIÇO DE <span class="accent">PRECISÃO</span></h2>
+      <p class="lead rise">Cada moto que entra aqui passa pelo mesmo ritual: diagnóstico completo, peças de qualidade e teste final antes da entrega. Sem gambiarra, sem pressa, sem surpresa no orçamento.</p>
+      <div class="svc-grid">
+        <div class="svc-img rise">
+          <img src="assets/oficina.webp" alt="Mecânico ajustando freio de motocicleta na oficina Motobonas" loading="lazy">
+          <span class="tag">BOX 01 — REVISÃO EM ANDAMENTO</span>
+        </div>
+        <div class="svc-list rise">
+          <div class="svc"><span class="n">/01</span><div><h3>Revisão completa</h3><p>Checklist de mais de 40 itens: motor, transmissão, freios, suspensão e elétrica.</p></div><span class="go">→</span></div>
+          <div class="svc"><span class="n">/02</span><div><h3>Diagnóstico eletrônico</h3><p>Leitura de falhas, sensores e injeção com equipamento dedicado.</p></div><span class="go">→</span></div>
+          <div class="svc"><span class="n">/03</span><div><h3>Freios &amp; suspensão</h3><p>Pastilhas, discos, fluído, bengalas e regulagem para o seu peso e pilotagem.</p></div><span class="go">→</span></div>
+          <div class="svc"><span class="n">/04</span><div><h3>Transmissão</h3><p>Kit relação, corrente, pinhão, coroa e embreagem com torque especificado.</p></div><span class="go">→</span></div>
+          <div class="svc"><span class="n">/05</span><div><h3>Elétrica &amp; injeção</h3><p>Bateria, chicote, sensores, bicos e corpo de borboleta.</p></div><span class="go">→</span></div>
+          <div class="svc"><span class="n">/06</span><div><h3>Pneus &amp; geometria</h3><p>Montagem, balanceamento e calibragem para cada tipo de uso.</p></div><span class="go">→</span></div>
+          <div class="svc"><span class="n">/07</span><div><h3>Motor &amp; válvulas</h3><p>Regulagem de válvulas, sincronismo e revisão interna com peças originais.</p></div><span class="go">→</span></div>
+          <div class="svc"><span class="n">/08</span><div><h3>Vistoria pré-compra</h3><p>Avaliação técnica completa para quem vai comprar moto usada: histórico, estrutura e mecânica.</p></div><span class="go">→</span></div>
+        </div>
+      </div>
+      <div class="steps rise">
+        <div class="step"><span class="sn">01</span><h3>Você chama</h3><p>Manda um WhatsApp com o modelo da moto e o que ela precisa. Sem formulário complicado.</p><span class="sa">→ COMEÇA NO WHATSAPP</span></div>
+        <div class="step"><span class="sn">02</span><h3>Diagnóstico + orçamento fechado</h3><p>A gente avalia, explica o que precisa ser feito e fecha o valor antes de mexer em qualquer parafuso.</p><span class="sa">→ SEM SURPRESA</span></div>
+        <div class="step"><span class="sn">03</span><h3>Serviço executado e testado</h3><p>Peça de qualidade, torque especificado e teste final. Você retira a moto pronta pra rodar.</p><span class="sa">→ HORA MARCADA</span></div>
+      </div>
+      <div class="rule"></div>
+      <div class="flagship rise">
+        <p class="kicker">Serviço carro-chefe</p>
+        <h3>REVISÃO PERFORMANCE <span>300cc+</span></h3>
+        <p class="lead">O protocolo completo para motos de média e alta cilindrada: cada modelo recebe um checklist próprio, do torque dos parafusos ao comportamento da injeção.</p>
+        <div class="flag-grid">
+          <ul class="benefits">
+            <li>Potência e torque revisados com segurança</li>
+            <li>Resposta de acelerador mais precisa</li>
+            <li>Eliminação de falhas e engasgos</li>
+          </ul>
+          <ul class="benefits">
+            <li>Diagnóstico eletrônico completo incluso</li>
+            <li>Só peças originais ou de linha premium</li>
+            <li>Sua moto testada antes da entrega</li>
+          </ul>
+        </div>
+        <p class="anti">Diferente de oficina genérica: aqui quem mexe na sua moto vive o mundo das altas cilindradas — sabemos exatamente onde cada modelo pede atenção.</p>
+        <div class="cta-row">
+          <a class="btn solid" href="https://wa.me/5585994002002?text=Ol%C3%A1!%20Quero%20agendar%20a%20Revis%C3%A3o%20Performance%20300cc%2B." target="_blank" rel="noopener" data-wa>Agendar revisão performance</a>
+        </div>
+      </div>
+      <div class="checklist rise">
+        <h3>O QUE ENTRA NA <span>REVISÃO COMPLETA</span></h3>
+        <ul class="check-grid">
+          <li>Troca de óleo e filtro</li>
+          <li>Fluido de freio</li>
+          <li>Pastilhas e discos de freio</li>
+          <li>Líquido de arrefecimento</li>
+          <li>Kit relação: corrente, coroa e pinhão</li>
+          <li>Filtro de ar</li>
+          <li>Limpeza de bicos e corpo de borboleta</li>
+          <li>Velas de ignição</li>
+          <li>Regulagem de válvulas</li>
+          <li>Suspensão e caixa de direção</li>
+          <li>Balanceamento e calibragem</li>
+          <li>Lavagem e teste final de rodagem</li>
+        </ul>
+      </div>
+      <div class="rule"></div>
+      <div class="cta-row rise">
+        <a class="btn solid" href="https://wa.me/5585994002002?text=Ol%C3%A1!%20Quero%20agendar%20uma%20revis%C3%A3o%20para%20minha%20moto." target="_blank" rel="noopener" data-wa>Agendar revisão</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 ALTAS CC -->
+  <section class="statement" id="altas">
+    <div class="wrap">
+      <span class="chap">CAPÍTULO 02</span>
+      <p class="kicker">Posicionamento</p>
+      <h2 class="big" data-words>MOTO GRANDE PEDE CUIDADO <span class="o">GRANDE.</span></h2>
+      <div class="cols">
+        <p class="lead rise">Naked, big trail, esportiva — motos de média e alta cilindrada têm eletrônica, torque e tolerâncias que exigem outro padrão de oficina. Esse é o nosso território.</p>
+        <div class="rise">
+          <div class="spec"><span class="dot"></span><p><b>Experiência real em alta cc.</b> Anos cuidando de motores acima de 300cc: sabemos onde cada modelo costuma pedir atenção.</p></div>
+          <div class="spec"><span class="dot"></span><p><b>Peça certa, sem adaptação.</b> Trabalhamos com peças originais e linhas premium — o que a sua moto foi projetada para usar.</p></div>
+          <div class="spec"><span class="dot"></span><p><b>Transparência de box.</b> Você aprova o serviço antes, acompanha o andamento e recebe a moto testada.</p></div>
+          <div class="spec"><span class="dot"></span><p><b>Acompanhamento em tempo real.</b> Fotos e atualizações de cada etapa direto no seu WhatsApp — você sabe exatamente o que está sendo feito na sua moto.</p></div>
+        </div>
+      </div>
+      <div class="rule"></div>
+      <div class="cta-row rise">
+        <a class="btn" href="https://wa.me/5585994002002?text=Ol%C3%A1!%20Tenho%20uma%20moto%20de%20alta%20cilindrada%20e%20quero%20falar%20com%20um%20especialista." target="_blank" rel="noopener" data-wa>Agendar uma avaliação</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 PEÇAS -->
+  <section id="pecas">
+    <div class="wrap">
+      <span class="chap">CAPÍTULO 03</span>
+      <p class="kicker">Peças &amp; acessórios</p>
+      <h2 class="h-sec" data-words>A PEÇA CERTA, <span class="accent">NA HORA CERTA</span></h2>
+      <p class="lead rise">Peças originais e de performance com procedência garantida. Se não estiver na prateleira, a gente consegue para você — com prazo e preço fechados antes. E o melhor: oficina e peças no mesmo lugar, você resolve tudo sem rodar a cidade.</p>
+      <div class="parts-grid rise">
+        <div class="part"><span class="pn">/01</span><h3>Motor &amp; filtros</h3><p>Óleos, filtros, velas, juntas e componentes internos.</p></div>
+        <div class="part"><span class="pn">/02</span><h3>Freios</h3><p>Pastilhas, discos, fluídos e linhas de alta performance.</p></div>
+        <div class="part"><span class="pn">/03</span><h3>Transmissão</h3><p>Kits relação, correntes reforçadas e embreagens.</p></div>
+        <div class="part"><span class="pn">/04</span><h3>Suspensão</h3><p>Retentores, óleos, molas e kits de regulagem.</p></div>
+        <div class="part"><span class="pn">/05</span><h3>Elétrica</h3><p>Baterias, cabos, sensores, lâmpadas e chicotes.</p></div>
+        <div class="part"><span class="pn">/06</span><h3>Pneus</h3><p>Linhas street, trail e esportiva nas medidas da sua moto.</p></div>
+        <div class="part"><span class="pn">/07</span><h3>Performance</h3><p>Escapamentos, filtros esportivos e acessórios de pilotagem.</p></div>
+        <div class="part"><span class="pn">/08</span><h3>Acessórios</h3><p>Protetores, suportes, bagageiros e itens de conveniência.</p></div>
+      </div>
+      <div class="parts-hero">
+        <div class="rise"><img src="assets/pecas.webp" alt="Peças premium de motocicleta sob luz âmbar" loading="lazy"></div>
+        <div class="rise">
+          <h3 style="font-family:var(--font-d);font-size:clamp(28px,3.4vw,46px);text-transform:uppercase;margin-bottom:18px">Vitrine também<br>no Mercado Livre</h3>
+          <p class="lead">Parte do nosso catálogo está publicada no Mercado Livre, com envio para todo o Brasil. Na loja física, o atendimento é direto com quem entende de moto.</p>
+          <a class="ml-link" href="https://www.mercadolivre.com.br/pagina/motobonas" target="_blank" rel="noopener">VER CATÁLOGO NO MERCADO LIVRE →</a>
+          <div class="cta-row" style="margin-top:30px">
+            <a class="btn solid" href="https://wa.me/5585994002002?text=Ol%C3%A1!%20Preciso%20de%20um%20or%C3%A7amento%20de%20pe%C3%A7a." target="_blank" rel="noopener" data-wa>Pedir orçamento de peça</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 AVALIAÇÕES -->
+  <section id="avaliacoes">
+    <div class="wrap">
+      <span class="chap">CAPÍTULO 04</span>
+      <p class="kicker">Quem já passou por aqui</p>
+      <h2 class="h-sec" data-words>QUEM PILOTA, <span class="accent">CONFIA</span></h2>
+      <div class="reviews-head rise">
+        <span class="score">4,6</span>
+        <div>
+          <div class="stars" aria-label="4,6 de 5 estrelas">★★★★★</div>
+          <p class="meta"><b>114 AVALIAÇÕES</b> NO GOOGLE</p>
+        </div>
+        <a class="g" href="https://www.google.com/search?q=Motobonas+centro+fortaleza#lrd=0x7c749a9a3ca3161:0x326c172f06913934,1,,,," target="_blank" rel="noopener">VER TODAS NO GOOGLE ↗</a>
+      </div>
+      <div class="rev-grid">
+        <article class="rev rise">
+          <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p class="txt">"Primeira vez na loja, fui bem atendido e o mecânico soube solucionar meu problema da melhor forma."</p>
+          <div class="who"><span class="ava">A</span><div><p class="n">Alan Paixão</p><p class="d">AVALIAÇÃO NO GOOGLE</p></div></div>
+        </article>
+        <article class="rev rise">
+          <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p class="txt">"Um time de especialistas apaixonados por motos esperando por você, Piloto."</p>
+          <div class="who"><span class="ava">M</span><div><p class="n">Mauro Bonon</p><p class="d">AVALIAÇÃO NO GOOGLE</p></div></div>
+        </article>
+        <article class="rev rise">
+          <div class="stars" aria-label="5 de 5 estrelas">★★★★★</div>
+          <p class="txt">"Tive uma boa experiência."</p>
+          <div class="who"><span class="ava">S</span><div><p class="n">Solid Solitare</p><p class="d">AVALIAÇÃO NO GOOGLE</p></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <span class="chap">CAPÍTULO 05</span>
+      <p class="kicker">Dúvidas frequentes</p>
+      <h2 class="h-sec" data-words>PERGUNTAS <span class="accent">FREQUENTES</span></h2>
+      <div class="faq rise">
+        <details>
+          <summary>Vocês atendem qual cilindrada?</summary>
+          <p class="a">Atendemos motos de todas as cilindradas, com especialidade em média e alta — acima de 300cc. É onde concentramos nossa experiência: naked, big trail e esportivas.</p>
+        </details>
+        <details>
+          <summary>Preciso agendar ou posso só chegar?</summary>
+          <p class="a">Trabalhamos com hora marcada para garantir que sua moto seja atendida sem espera e com o box livre. Chama no WhatsApp que a gente encaixa o melhor horário pra você.</p>
+        </details>
+        <details>
+          <summary>As peças são originais?</summary>
+          <p class="a">Sim. Trabalhamos com peças originais e linhas premium, sempre com procedência garantida. Nada de peça paralela duvidosa na sua moto.</p>
+        </details>
+        <details>
+          <summary>Quanto tempo dura uma revisão?</summary>
+          <p class="a">Depende do modelo e do que a moto precisa. No diagnóstico a gente passa o prazo fechado antes de começar — e você acompanha cada etapa pelo WhatsApp.</p>
+        </details>
+        <details>
+          <summary>Vocês vendem peças avulsas?</summary>
+          <p class="a">Sim. Na loja física e também no Mercado Livre, com envio para todo o Brasil. Se não tivermos na prateleira, conseguimos pra você com prazo e preço fechados.</p>
+        </details>
+        <details>
+          <summary>Como acompanho o serviço da minha moto?</summary>
+          <p class="a">Você recebe fotos e atualizações de cada etapa direto no seu WhatsApp. Transparência total: você aprova antes, acompanha durante e retira a moto testada.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 CONTATO -->
+  <section id="contato" style="background:var(--bg2);border-top:1px solid var(--line-soft)">
+    <div class="wrap">
+      <span class="chap">CAPÍTULO 06</span>
+      <p class="kicker">Contato</p>
+      <h2 class="h-sec" data-words>FALA COM <span class="accent">A GENTE</span></h2>
+      <p class="lead rise">Preencha e caia direto no nosso WhatsApp com a mensagem pronta. Respondemos em horário comercial — geralmente em poucos minutos.</p>
+      <div class="contact-grid">
+        <form id="lead" class="rise" novalidate>
+          <div class="frow">
+            <div class="field"><label for="f-nome">Seu nome</label><input id="f-nome" name="nome" type="text" placeholder="Como podemos te chamar?" required></div>
+            <div class="field"><label for="f-fone">Seu WhatsApp</label><input id="f-fone" name="fone" type="tel" inputmode="tel" placeholder="(85) 99999-9999" required></div>
+          </div>
+          <div class="frow">
+            <div class="field"><label for="f-moto">Modelo da moto</label><input id="f-moto" name="moto" type="text" placeholder="Ex.: CB 500F, MT-03, GS 800…"></div>
+            <div class="field"><label for="f-assunto">Assunto</label>
+              <select id="f-assunto" name="assunto">
+                <option>Revisão / oficina</option><option>Orçamento de peça</option><option>Dúvida sobre serviço</option><option>Outro assunto</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="f-msg">O que você precisa?</label><textarea id="f-msg" name="msg" placeholder="Conte rapidinho: barulho no freio, revisão dos 10 mil km, preço de pastilha…"></textarea></div>
+          <button class="btn solid" type="submit" style="justify-content:center">Enviar pelo WhatsApp</button>
+          <p style="font-family:var(--font-m);font-size:10px;letter-spacing:.18em;color:var(--ink-dim)">SEM COMPROMISSO · RESPOSTA RÁPIDA</p>
+        </form>
+        <aside class="cinfo rise">
+          <div class="row"><span class="k">WHATSAPP</span><a class="v hot" href="https://wa.me/5585994002002" target="_blank" rel="noopener" data-wa>(85) 99400-2002</a></div>
+          <div class="row"><span class="k">ONDE</span><span class="v">R. 24 de Maio, 1102 — Centro</span></div>
+          <div class="row"><span class="k">TAMBÉM</span><a class="v" href="https://www.mercadolivre.com.br/pagina/motobonas" target="_blank" rel="noopener" style="color:var(--amber)">Mercado Livre ↗</a></div>
+          <p class="hours">SEG — SEX · 08H ÀS 17H30<br>SÁB · 08H ÀS 13H<br>DOM · FECHADO</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-big" aria-hidden="true">MOTOBONAS</div>
+    <p class="manifest">Qualidade não é diferencial. <em>É o ponto de partida.</em></p>
+    <div class="foot-grid">
+      <p class="m"><b>MOTOBONAS</b> — PEÇAS E ACESSÓRIOS<br>OFICINA ESPECIALIZADA · FORTALEZA/CE<br>(85) 99400-2002</p>
+      <p class="m" style="text-align:right">CAP. 01 — 06 · EDIÇÃO 2026<br>FEITO PARA QUEM PILOTA ALTO</p>
+    </div>
+  </div>
+</footer>
+
+<div class="bookbar">
+  <span class="t"><b>REVISÃO COM HORA MARCADA</b>Vagas por agendamento</span>
+  <a class="btn solid" href="https://wa.me/5585994002002?text=Ol%C3%A1!%20Quero%20agendar%20um%20hor%C3%A1rio%20na%20Motobonas." target="_blank" rel="noopener" data-wa>Agendar</a>
+</div>
+
+<a class="wa-float" href="https://wa.me/5585994002002?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Motobonas." target="_blank" rel="noopener" aria-label="Chamar no WhatsApp" data-wa>
+  <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.1-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.2-.7.5-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.5 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+<script>
+(function(){
+"use strict";
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* header */
+var hdr=document.getElementById('hdr');
+addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>40)},{passive:true});
+
+/* mobile nav */
+var burger=document.getElementById('burger'),mnav=document.getElementById('mnav');
+burger.addEventListener('click',function(){mnav.classList.toggle('open')});
+mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mnav.classList.remove('open')})});
+
+/* word-by-word reveal */
+document.querySelectorAll('[data-words]').forEach(function(el){
+  var html=el.innerHTML.split(/(<span class="accent">.*?<\/span>|<span class="o">.*?<\/span>)/g);
+  el.innerHTML=html.map(function(part){
+    var m=part.match(/^<span class="(accent|o)">(.*)<\/span>$/);
+    var cls=m?m[1]:'',txt=m?m[2]:part;
+    return txt.split(/\s+/).filter(Boolean).map(function(w){
+      return '<span class="w"><span'+(cls?' class="'+cls+'"':'')+'>'+w+'</span></span>';
+    }).join(' ');
+  }).join(' ');
+});
+
+/* reveal on scroll */
+var io=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}
+})},{threshold:.18});
+document.querySelectorAll('[data-words],.rise,.svc,.part,.spec').forEach(function(el){io.observe(el)});
+
+/* chapter rail */
+var links=[].slice.call(document.querySelectorAll('.rail a'));
+var so=new IntersectionObserver(function(es){es.forEach(function(e){
+  if(e.isIntersecting){links.forEach(function(a){a.classList.toggle('active',a.dataset.sec===e.target.id)})}
+})},{rootMargin:'-40% 0px -55% 0px'});
+['oficina','altas','pecas','avaliacoes','faq','contato'].forEach(function(id){var s=document.getElementById(id);if(s)so.observe(s)});
+
+/* embers */
+var cv=document.getElementById('embers');
+if(!reduce&&cv.getContext){
+  var ctx=cv.getContext('2d'),W,H,P=[];
+  function size(){W=cv.width=innerWidth;H=cv.height=innerHeight}
+  size();addEventListener('resize',size);
+  function spawn(n){for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:H+10,r:.6+Math.random()*2.2,
+    s:.3+Math.random()*.9,dx:(Math.random()-.5)*.4,a:.25+Math.random()*.5,tw:Math.random()*6.28})}
+  spawn(70);
+  (function tick(t){
+    ctx.clearRect(0,0,W,H);
+    for(var i=P.length-1;i>=0;i--){var p=P[i];
+      p.y-=p.s;p.x+=p.dx+Math.sin(t/900+p.tw)*.25;p.a-=.0009;
+      if(p.y<-12||p.a<=0){P.splice(i,1);continue}
+      var g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4);
+      var al=p.a*(0.6+0.4*Math.sin(t/300+p.tw));
+      g.addColorStop(0,'rgba(255,140,40,'+al+')');g.addColorStop(1,'rgba(255,77,0,0)');
+      ctx.fillStyle=g;ctx.beginPath();ctx.arc(p.x,p.y,p.r*4,0,6.283);ctx.fill();
+    }
+    if(P.length<70&&Math.random()<.3)spawn(2);
+    requestAnimationFrame(tick);
+  })(0);
+}
+
+/* conversion helper (Google Ads): dispara quando o gtag existir */
+function fireConversion(){try{if(typeof gtag==='function'){gtag('event','conversion',{send_to:'AW-CONVERSION_ID/LEAD_LABEL'})}}catch(e){}}
+document.querySelectorAll('[data-wa]').forEach(function(a){a.addEventListener('click',fireConversion)});
+
+/* lead form -> WhatsApp */
+var NUM='5585994002002';
+document.getElementById('lead').addEventListener('submit',function(e){
+  e.preventDefault();
+  var v=function(id){return document.getElementById(id).value.trim()};
+  var nome=v('f-nome'),fone=v('f-fone');
+  if(!nome||!fone){
+    (!nome?document.getElementById('f-nome'):document.getElementById('f-fone')).focus();
+    return;
+  }
+  var msg='Olá! Vim pelo site da Motobonas.%0A%0A'+
+    'Nome: '+encodeURIComponent(nome)+'%0A'+
+    'WhatsApp: '+encodeURIComponent(fone)+'%0A'+
+    'Moto: '+encodeURIComponent(v('f-moto')||'—')+'%0A'+
+    'Assunto: '+encodeURIComponent(v('f-assunto'))+'%0A'+
+    'Mensagem: '+encodeURIComponent(v('f-msg')||'—');
+  fireConversion();
+  open('https://wa.me/'+NUM+'?text='+msg,'_blank','noopener');
+});
+})();
+</script>
+</body>
+</html>
