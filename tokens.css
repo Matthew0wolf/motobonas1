@@ -1,0 +1,56 @@
+:root {
+  /* Colors */
+  --color-bg: #000000;
+  --color-bg2: #0a0a0a;
+  --color-text: #f5f5f5;
+  --color-text-dim: #999999;
+  --color-primary: #e10600;
+  --color-primary-deep: #8f0400;
+  --color-divider: rgba(245,245,245,.14);
+  --color-divider-soft: rgba(245,245,245,.07);
+
+  /* Typography */
+  --font-d: 'Jost', sans-serif;
+  --font-b: 'Inter', sans-serif;
+  --font-display-size: clamp(60px, 11.5vw, 180px);
+  --font-display-weight: 200;
+  --font-display-lh: 0.96;
+  --font-display-ls: 0.05em;
+  --font-display-transform: uppercase;
+  --font-section-size: clamp(46px, 7.5vw, 110px);
+  --font-section-weight: 300;
+  --font-section-lh: 1.1;
+  --font-section-mb: 28px;
+  --font-section-ls: 0.02em;
+  --font-body-size: clamp(15px, 1.5vw, 18px);
+  --font-body-lh: 1.75;
+  --font-body-weight: 400;
+  --font-label-size: 12px;
+  --font-label-weight: 400;
+  --font-label-ls: 0.22em;
+  --font-label-transform: uppercase;
+
+  /* Spacing */
+  --space-xs: clamp(4px, 0.8vw, 8px);
+  --space-sm: clamp(8px, 1.5vw, 16px);
+  --space-md: clamp(16px, 3vw, 32px);
+  --space-lg: clamp(28px, 4.5vw, 56px);
+  --space-xl: clamp(50px, 7vw, 80px);
+  --space-xxl: clamp(100px, 14vh, 170px);
+
+  /* Component tokens */
+  --button-primary-bg: var(--color-bg);
+  --button-primary-border: var(--color-primary);
+  --button-primary-color: var(--color-text);
+  --button-primary-padding: 16px 34px;
+  --button-primary-radius: 2px;
+  --button-primary-transition: 0.3s;
+  --button-primary-hover-bg: var(--color-primary);
+  --button-primary-hover-color: #fff;
+  --button-solid-bg: var(--color-primary);
+  --button-solid-border: var(--color-primary);
+  --button-solid-color: #fff;
+  --button-solid-hover-bg: #f5f5f5;
+  --button-solid-hover-border: #f5f5f5;
+  --button-solid-hover-color: #000;
+}
