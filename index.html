@@ -111,9 +111,28 @@ html[data-theme="light"] .theme-toggle .icon-moon{display:none}
 .cta-row{display:flex;gap:18px;flex-wrap:wrap}
 
 /* photo strip */
-.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
-.strip img{width:100%;height:clamp(220px,32vh,380px);object-fit:cover;filter:saturate(1.06) contrast(1.06) brightness(.96);transition:.5s}
-.strip img:hover{filter:saturate(1.12) contrast(1.05) brightness(1)}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line-soft);
+  border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft)}
+.strip-item{position:relative;overflow:hidden;margin:0;background:#000;display:block}
+.strip-item img{width:100%;height:clamp(230px,34vh,400px);object-fit:cover;object-position:center;
+  filter:saturate(1.04) contrast(1.06) brightness(.88);
+  transition:transform 1.2s cubic-bezier(.16,1,.3,1),filter .5s}
+.strip-item figcaption{position:absolute;left:0;right:0;bottom:0;margin:0;padding:30px 20px 16px;
+  font-size:10px;font-weight:400;letter-spacing:.26em;text-transform:uppercase;color:#f5f5f5;
+  background:linear-gradient(0deg,rgba(0,0,0,.86) 10%,rgba(0,0,0,.35) 60%,transparent);
+  opacity:.86;transition:opacity .4s}
+.strip-item figcaption::before{content:'';display:inline-block;width:14px;height:1px;background:var(--accent);
+  vertical-align:middle;margin-right:9px}
+.strip-item:hover img,.strip-item:focus-within img{transform:scale(1.05);filter:saturate(1.12) contrast(1.05) brightness(1)}
+.strip-item:hover figcaption,.strip-item:focus-within figcaption{opacity:1}
+@media(max-width:640px){
+  .strip-item img{height:200px}
+  .strip-item figcaption{padding:22px 12px 11px;font-size:9px;letter-spacing:.16em}
+  .strip-item figcaption::before{width:10px;margin-right:6px}
+}
+@media(prefers-reduced-motion:reduce){
+  .strip-item:hover img,.strip-item:focus-within img{transform:none}
+}
 
 /* split */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,100px);align-items:start;margin-top:48px}
@@ -288,7 +307,6 @@ html[data-theme="light"] .status.aberto{color:#0f7a3d}
   nav.desk,.brand .bt{display:none}
   .burger{display:flex}
   .strip{grid-template-columns:repeat(2,1fr)}
-  .strip img{height:180px}
   .rev-grid{grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
   .svc-grid{grid-template-columns:1fr}
@@ -371,26 +389,26 @@ html[data-theme="light"] .status.aberto{color:#0f7a3d}
 
   <!-- PHOTO STRIP -->
   <div class="strip" role="group" aria-label="A oficina">
-    <picture>
+    <figure class="strip-item"><picture>
       <source type="image/avif" srcset="assets/fachada-480.avif 480w, assets/fachada-800.avif 800w, assets/fachada-1100.avif 1100w" sizes="(max-width:640px) 50vw, 25vw">
       <source type="image/webp" srcset="assets/fachada-480.webp 480w, assets/fachada-800.webp 800w, assets/fachada-1100.webp 1100w" sizes="(max-width:640px) 50vw, 25vw">
       <img src="assets/fachada-800.webp" width="800" height="446" alt="Fachada da loja Motobonas" loading="lazy" decoding="async">
-    </picture>
-    <picture>
+    </picture><figcaption aria-hidden="true">A fachada</figcaption></figure>
+    <figure class="strip-item"><picture>
       <source type="image/avif" srcset="assets/pecas-480.avif 480w, assets/pecas-800.avif 800w, assets/pecas-1280.avif 1280w" sizes="(max-width:640px) 50vw, 25vw">
       <source type="image/webp" srcset="assets/pecas-480.webp 480w, assets/pecas-800.webp 800w, assets/pecas-1280.webp 1280w" sizes="(max-width:640px) 50vw, 25vw">
       <img src="assets/pecas-800.webp" width="800" height="533" alt="Peças de motocicleta" loading="lazy" decoding="async">
-    </picture>
-    <picture>
+    </picture><figcaption aria-hidden="true">Peças e acessórios</figcaption></figure>
+    <figure class="strip-item"><picture>
       <source type="image/avif" srcset="assets/detalhe-480.avif 480w, assets/detalhe-800.avif 800w, assets/detalhe-1200.avif 1200w" sizes="(max-width:640px) 50vw, 25vw">
       <source type="image/webp" srcset="assets/detalhe-480.webp 480w, assets/detalhe-800.webp 800w, assets/detalhe-1200.webp 1200w" sizes="(max-width:640px) 50vw, 25vw">
       <img src="assets/detalhe-800.webp" width="800" height="533" alt="Detalhe de freio de motocicleta" loading="lazy" decoding="async">
-    </picture>
-    <picture>
+    </picture><figcaption aria-hidden="true">Detalhe de freio</figcaption></figure>
+    <figure class="strip-item"><picture>
       <source type="image/avif" srcset="assets/hero-480.avif 480w, assets/hero-800.avif 800w, assets/hero-1200.avif 1200w" sizes="(max-width:640px) 50vw, 25vw">
       <source type="image/webp" srcset="assets/hero-480.webp 480w, assets/hero-800.webp 800w, assets/hero-1200.webp 1200w" sizes="(max-width:640px) 50vw, 25vw">
       <img src="assets/hero-800.webp" width="800" height="450" alt="Motocicleta esportiva" loading="lazy" decoding="async">
-    </picture>
+    </picture><figcaption aria-hidden="true">Esportivas</figcaption></figure>
   </div>
 
   <!-- O BOX -->
