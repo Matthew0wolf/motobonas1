@@ -1,0 +1,13 @@
+# sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ferramentas
+.vercel/
+node_modules/
+*.log
+
+# arquivos grandes/fora do site
+source/
+textures/
