@@ -35,6 +35,18 @@
       "has": [{ "type": "host", "value": "www.motobonas.com.br" }],
       "destination": "https://motobonas.com.br/$1",
       "permanent": true
-    }
+    },
+    { "source": "/assets/fachada.webp", "destination": "/assets/fachada-800.webp", "permanent": true },
+    { "source": "/assets/pecas.webp", "destination": "/assets/pecas-800.webp", "permanent": true },
+    { "source": "/assets/detalhe.webp", "destination": "/assets/detalhe-800.webp", "permanent": true },
+    { "source": "/assets/hero.webp", "destination": "/assets/hero-800.webp", "permanent": true },
+    { "source": "/assets/dono.webp", "destination": "/assets/dono-800.webp", "permanent": true },
+    { "source": "/assets/naked.webp", "destination": "/assets/naked-800.webp", "permanent": true },
+    { "source": "/assets/carenada.webp", "destination": "/assets/carenada-800.webp", "permanent": true },
+    { "source": "/assets/logo.webp", "destination": "/assets/logo-320.webp", "permanent": true },
+    { "source": "/assets/hero-loop.webm", "destination": "/assets/hero-loop-opt.mp4", "permanent": true },
+    { "source": "/assets/hero-loop.mp4", "destination": "/assets/hero-loop-opt.mp4", "permanent": true },
+    { "source": "/hero-loop.webm", "destination": "/assets/hero-loop-opt.mp4", "permanent": true },
+    { "source": "/hero-loop.mp4", "destination": "/assets/hero-loop-opt.mp4", "permanent": true }
   ]
 }
