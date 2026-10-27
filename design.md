@@ -1,105 +1,60 @@
----
-version: "1.0"
-name: "Motobonas"
-description: "Oficina de motos em Fortaleza — identidade visual"
-colors:
-  bg: "#000000"
-  bg-elevated: "#0a0a0a"
-  text: "#f5f5f5"
-  text-dim: "#999999"
-  primary: "#e10600"
-  primary-deep: "#8f0400"
-  divider: "rgba(245,245,245,.14)"
-  divider-soft: "rgba(245,245,255,.07)"
-typography:
-  heading-display:
-    fontFamily: "Jost"
-    fontWeight: 200
-    fontSize: clamp(60px, 11.5vw, 180px)
-    lineHeight: 0.96
-    letterSpacing: 0.05em
-    textTransform: uppercase
-  heading-section:
-    fontFamily: "Jost"
-    fontWeight: 300
-    fontSize: clamp(46px, 7.5vw, 110px)
-    marginBottom: 28px
-    letterSpacing: 0.02em
-  body:
-    fontFamily: "Inter"
-    fontSize: clamp(15px, 1.5vw, 18px)
-    lineHeight: 1.75
-    fontWeight: 400
-  mono-label:
-    fontFamily: "Jost"
-    fontSize: 12px
-    letterSpacing: 0.22em
-    textTransform: uppercase
-spacing:
-  xs: clamp(4px, 0.8vw, 8px)
-  sm: clamp(8px, 1.5vw, 16px)
-  md: clamp(16px, 3vw, 32px)
-  lg: clamp(28px, 4.5vw, 56px)
-  xl: clamp(50px, 7vw, 80px)
-  xxl: clamp(100px, 14vh, 170px)
-components:
-  button-primary:
-    backgroundColor: "{colors.bg}"
-    borderColor: "{colors.primary}"
-    color: "{colors.text}"
-    fontFamily: "{typography.mono-label.fontFamily}"
-    fontSize: "{typography.mono-label.fontSize}"
-    padding: "16px 34px"
-    borderRadius: 2px
-    transition: 0.3s
-  button-primary-hover:
-    backgroundColor: "{colors.primary}"
-    color: "#fff"
-  button-solid:
-    backgroundColor: "{colors.primary}"
-    borderColor: "{colors.primary}"
-    color: "#fff"
-  button-solid-hover:
-    backgroundColor: "#f5f5f5"
-    borderColor: "#f5f5f5"
-    color: "#000"
----
+# Motobonas — sistema visual
 
-## Visão geral
-
-Motobonas é uma oficina especializada em motos de média e alta cilindrada em Fortaleza/CE. O site é uma landing page estática com foco em conversão via WhatsApp.
+Especificação do que está **realmente** no `index.html`. Se mudar o CSS, atualize aqui.
 
 ## Cores
 
-- **Preto (`#000000`)**: background principal
-- **Cinza escuro (`#0a0a0a`)**: background de cards/elevations
-- **Branco (`#f5f5f5`)**: texto principal
-- **Cinza médio (`#999999`)**: texto secundário/dim
-- **Vermelho (`#e10600`)**: cor de destaque, botões, acentos
+| token | valor | uso |
+|---|---|---|
+| `--bg` | `#000000` | fundo do site e dos cards |
+| `--bg2` | `#0a0a0a` | superfícies elevadas (serviços, avaliações) |
+| `--ink` | `#f5f5f5` | texto principal |
+| `--dim` | `#999999` | texto secundário (7,37:1 no preto) |
+| `--accent` | `#f7550f` | destaque, links, micro-labels (6,26:1 no preto) |
+| `--accent-deep` | `#b53c08` | acento sobre fundo claro (5,91:1 no branco) |
+| `--line` | `rgba(245,245,245,.13)` | divisores |
+| `--line-soft` | `rgba(245,245,245,.07)` | divisores sutis |
 
 ## Tipografia
 
-- **Jost**: fonte para headings, labels, botões (peso 200-500)
-- **Inter**: fonte para corpo de texto (peso 400-500)
+Uma família só: **Inter** (variável, 200–600), self-hosted em `assets/fonts/*.woff2`. Sem Google Fonts e sem segunda família.
 
-## Layout
-
-Estrutura baseada em grid com breakpoints:
-- Mobile (<640px): colunas únicas, navegação hamburger
-- Tablet (640px-1024px): 2 colunas
-- Desktop (>1024px): até 4 colunas
+- display (`h1`): `clamp(64px, 11.5vw, 180px)` · peso 200 · uppercase · `line-height: .98` · `letter-spacing: .05em`
+- seção (`h2`): `clamp(44px, 7vw, 104px)` · peso 200 · uppercase
+- corpo: `clamp(15px, 1.5vw, 18px)` · peso 300 · `line-height: 1.75`
+- micro-label: 12px · `letter-spacing: .3em` · uppercase · cor `--accent`
 
 ## Componentes
 
-- **Botões primários**: borda vermelha, preenchimento transparente, hover preenchido vermelho
-- **Botões sólidos**: fundo vermelho, hover branco
-- **Card de serviço**: hover com elevação sutil
-- **Rail de capítulos**: fixed right, scrollspy
+- **`.btn` (sólido)**: fundo `--accent`, texto `#0a0a0a` (6,26:1), padding `16px 36px`, raio 2px; hover inverte para `#f5f5f5` com texto preto.
+- **`.btn.ghost-btn`**: transparente, borda `--line`; hover com borda/texto laranja.
+- **`.build` (oficina / peças)**: fundo `--bg` puro (preto) + brilho radial laranja a 7% num `::before` decorativo. As imagens das motos são recortes com alpha: nunca converter para RGB ao gerar variantes, senão o fundo transparente vira retângulo preto sobre o card.
+- **`.svc`, `.rev`, `.rev-head`**: superfície `--bg2`, borda `--line-soft`, hover muda a borda.
+- **`.marquee`**: track infinito, segunda cópia com `aria-hidden`, pausa no hover.
 
-## Acessibilidade
+## Imagens
 
-- Contraste texto/preto: 15.8:1 (AAA)
-- Contraste texto/branco: 12.6:1 (AAA)
-- Contraste vermelho/branco: 4.5:1 (AA)
-- `:focus-visible` com ring visível
-- `prefers-reduced-motion` suportado
+- Sempre `<picture>` com AVIF + WebP e `srcset` (480 / 800 / 1200 + maior), `sizes` coerente com o layout.
+- Fotos: `width`/`height` explícitos, `loading="lazy"`, `decoding="async"`.
+- Recortes de moto: RGBA preservado nos três formatos.
+
+## Movimento
+
+- Reveal por `IntersectionObserver`, apenas quando `<html>` tem a classe `js` — sem JavaScript o conteúdo nunca fica invisível.
+- Vídeo do hero: só em telas ≥ 641px, depois do evento `load`, desligado em `prefers-reduced-motion` e em conexão com data-saver.
+- `prefers-reduced-motion: reduce` desliga animações e transições.
+
+## Acessibilidade — números medidos
+
+- Texto principal sobre preto: 19,26:1.
+- Texto `--dim` sobre preto: 7,37:1.
+- Botão sólido (texto preto sobre laranja): 6,26:1.
+- Links de contato com alvo de toque ≥ 44px no mobile.
+- Menu mobile: `aria-expanded`, fecha com ESC, foco entra no overlay e fica contido.
+- Formulário: erro visível por campo, `aria-invalid` e `aria-live`.
+
+## Breakpoints
+
+- `< 640px`: coluna única, hamburger, barra fixa de agendamento.
+- `640–1024px`: 2 colunas.
+- `> 1024px`: até 4 colunas.
