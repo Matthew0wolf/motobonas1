@@ -30,12 +30,14 @@ Uma família só: **Inter** (variável, 200–600), self-hosted em `assets/fonts
 - **`.btn.ghost-btn`**: transparente, borda `--line`; hover com borda/texto laranja.
 - **`.build` (oficina / peças)**: fundo `--bg` puro (preto) + brilho radial laranja a 7% num `::before` decorativo. As imagens das motos são recortes com alpha: nunca converter para RGB ao gerar variantes, senão o fundo transparente vira retângulo preto sobre o card.
 - **`.svc`, `.rev`, `.rev-head`**: superfície `--bg2`, borda `--line-soft`, hover muda a borda.
+- **`.team-card`**: retrato quadrado com nome e função; grade em três colunas no desktop e duas em telas menores.
 - **`.marquee`**: track infinito, segunda cópia com `aria-hidden`, pausa no hover.
 
 ## Imagens
 
 - Sempre `<picture>` com AVIF + WebP e `srcset` (480 / 800 / 1200 + maior), `sizes` coerente com o layout.
 - Fotos: `width`/`height` explícitos, `loading="lazy"`, `decoding="async"`.
+- Retratos da equipe ficam em `equipe/`, com `object-fit: cover` para preservar o enquadramento quadrado.
 - Recortes de moto: RGBA preservado nos três formatos.
 
 ## Movimento

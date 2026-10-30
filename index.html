@@ -169,6 +169,16 @@ html[data-theme="light"] .theme-toggle .icon-moon{display:none}
 .svc h3{font-size:17px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;margin-bottom:12px;line-height:1.35}
 .svc p{font-size:13.5px;color:var(--dim);line-height:1.65;font-weight:300}
 
+/* team */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.team-card{overflow:hidden;border:1px solid var(--line-soft);background:var(--bg2);transition:border-color .3s,transform .3s}
+.team-card:hover{border-color:rgba(247,85,15,.55);transform:translateY(-5px)}
+.team-card img{width:100%;aspect-ratio:1;object-fit:cover;filter:saturate(.88);transition:filter .4s}
+.team-card:hover img{filter:saturate(1)}
+.team-card .info{padding:20px 22px 22px}
+.team-card h3{font-size:17px;font-weight:500;letter-spacing:.04em;text-transform:uppercase;margin-bottom:8px}
+.team-card p{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+
 /* brands marquee */
 .marquee{overflow:hidden;margin-top:56px;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);
   -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
@@ -299,7 +309,9 @@ html[data-theme="light"] .status.aberto{color:#0f7a3d}
 
 @media(max-width:1024px){
   .split,.contact-grid{grid-template-columns:1fr}
+  nav.desk{gap:18px;font-size:10px}
   .svc-grid{grid-template-columns:repeat(2,1fr)}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
   .strip{grid-template-columns:repeat(2,1fr)}
   .rev-grid{grid-template-columns:repeat(2,1fr)}
 }
@@ -308,6 +320,9 @@ html[data-theme="light"] .status.aberto{color:#0f7a3d}
   .burger{display:flex}
   .strip{grid-template-columns:repeat(2,1fr)}
   .rev-grid{grid-template-columns:1fr}
+  .team-card .info{padding:16px}
+  .team-card h3{font-size:14px}
+  .team-card p{font-size:9px;letter-spacing:.12em}
   .frow{grid-template-columns:1fr}
   .svc-grid{grid-template-columns:1fr}
   .builds{grid-template-columns:1fr}
@@ -354,6 +369,7 @@ html[data-theme="light"] .status.aberto{color:#0f7a3d}
     <a href="#servicos">SERVIÇOS</a>
     <a href="#pecas">PEÇAS</a>
     <a href="#sobre">SOBRE</a>
+    <a href="#equipe">EQUIPE</a>
     <a href="#contato">CONTATO</a>
   </nav>
   <div class="hact">
@@ -367,7 +383,7 @@ html[data-theme="light"] .status.aberto{color:#0f7a3d}
 </header>
 <nav class="mnav" id="mnav" aria-label="Menu móvel">
   <a href="#topo" class="mnav-brand" aria-label="Motobonas - início"><img src="assets/logo-2026-320.webp" alt="Moto Bonas - Oficina e Moto Peças" width="132" height="76"></a>
-  <a href="#oficina">A oficina</a><a href="#servicos">Serviços</a><a href="#pecas">Peças</a><a href="#sobre">Sobre</a><a href="#contato">Contato</a>
+  <a href="#oficina">A oficina</a><a href="#servicos">Serviços</a><a href="#pecas">Peças</a><a href="#sobre">Sobre</a><a href="#equipe">Equipe</a><a href="#contato">Contato</a>
   <a class="on" href="https://wa.me/5585994002002?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Motobonas." target="_blank" rel="noopener" data-wa>WhatsApp</a>
 </nav>
 
@@ -564,6 +580,41 @@ html[data-theme="light"] .status.aberto{color:#0f7a3d}
     </div>
   </section>
 
+  <!-- EQUIPE -->
+  <section id="equipe" style="padding-top:0">
+    <div class="wrap">
+      <p class="micro rise">QUEM CUIDA DA SUA MOTO</p>
+      <h2 class="h-big rise">NOSSA<br>EQUIPE</h2>
+      <p class="lead rise">Gente que entende de moto e está pronta para cuidar de você e da sua máquina.</p>
+      <div class="team-grid">
+        <article class="team-card rise">
+          <img src="equipe/Ang%C3%A9lica%20-%20Administrativo.png" width="404" height="404" alt="Angélica, da equipe administrativa da Moto Bonas" loading="lazy" decoding="async">
+          <div class="info"><h3>Angélica</h3><p>Administrativo</p></div>
+        </article>
+        <article class="team-card rise">
+          <img src="equipe/Felipe%20-%20Mec%C3%A2nico.png" width="402" height="402" alt="Felipe, mecânico da Moto Bonas" loading="lazy" decoding="async">
+          <div class="info"><h3>Felipe</h3><p>Mecânico</p></div>
+        </article>
+        <article class="team-card rise">
+          <img src="equipe/Maicon%20-%20Chefe%20de%20Oficina.png" width="400" height="400" alt="Maicon, chefe de oficina da Moto Bonas" loading="lazy" decoding="async">
+          <div class="info"><h3>Maicon</h3><p>Chefe de oficina</p></div>
+        </article>
+        <article class="team-card rise">
+          <img src="equipe/Mauro%20-%20Administrativo.png" width="400" height="400" alt="Mauro, da equipe administrativa da Moto Bonas" loading="lazy" decoding="async">
+          <div class="info"><h3>Mauro</h3><p>Administrativo</p></div>
+        </article>
+        <article class="team-card rise">
+          <img src="equipe/Samara%20-%20Vendedora.png" width="400" height="400" alt="Samara, vendedora da Moto Bonas" loading="lazy" decoding="async">
+          <div class="info"><h3>Samara</h3><p>Vendedora</p></div>
+        </article>
+        <article class="team-card rise">
+          <img src="equipe/Vin%C3%ADcius%20-%20Mec%C3%A2nico.png" width="400" height="404" alt="Vinícius, mecânico da Moto Bonas" loading="lazy" decoding="async">
+          <div class="info"><h3>Vinícius</h3><p>Mecânico</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ -->
   <section id="faq" style="padding-top:0">
     <div class="wrap">
@@ -645,6 +696,7 @@ html[data-theme="light"] .status.aberto{color:#0f7a3d}
         <a href="#servicos">Serviços</a>
         <a href="#pecas">Peças e marcas</a>
         <a href="#sobre">Avaliações</a>
+        <a href="#equipe">Equipe</a>
         <a href="#faq">Dúvidas</a>
         <a href="#contato">Contato</a>
       </nav>
