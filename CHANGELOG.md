@@ -1,5 +1,11 @@
 # Changelog — site Motobonas
 
+## Nov/2026 — logo oficial e novo colaborador
+
+- **Logo correta aplicada.** O site usava `logo-2026-*` com `filter:invert(1) hue-rotate(180deg)`, que distorcia o laranja da marca. Agora existem duas variantes reais do wordmark oficial: `assets/logo-mb-dark-{400,800,1200}.webp` (letras brancas, tema escuro) e `assets/logo-mb-light-{400,800,1200}.webp` (letras pretas, tema claro), ambas RGBA com o laranja `#fd5d04` preservado. A troca é por CSS (`img.lg-dark` / `img.lg-light`), sem filtro. Aplicada no header, menu mobile (sempre escuro → variante clara), rodapé (sempre escuro) e página de privacidade.
+- `assets/og-image.jpg` e `assets/favicon.png` regerados a partir da mesma marca; JSON-LD `logo` aponta para a nova imagem.
+- **Novo colaborador**: Julia, estoquista (`equipe/Julia - Estoquista.png`, 400x400), incluída na grade da seção Equipe.
+
 ## Out/2026 — auditoria e correções
 
 ### Correção do fundo dos cards Oficina/Peças

@@ -35,6 +35,8 @@ Uma família só: **Inter** (variável, 200–600), self-hosted em `assets/fonts
 
 ## Imagens
 
+- **Logo**: duas variantes do wordmark (`Logo MOTOBONAS.png` com letras brancas para o tema escuro e `Logo MOTOBONAS em Preto.png` para o tema claro). Em `assets/`: `logo-mb-dark-{400,800,1200}.webp` e `logo-mb-light-{400,800,1200}.webp`, ambas RGBA com o laranja `#fd5d04` da marca preservado. O header troca por CSS (`img.lg-dark` / `img.lg-light`); o menu mobile é sempre escuro e por isso sempre usa a variante clara. Nenhuma das duas usa `filter` — o `invert(1)` antigo distorcia o laranja.
+- `assets/og-image.jpg` (1200x630) e `assets/favicon.png` (512x512) são gerados a partir da mesma marca.
 - Sempre `<picture>` com AVIF + WebP e `srcset` (480 / 800 / 1200 + maior), `sizes` coerente com o layout.
 - Fotos: `width`/`height` explícitos, `loading="lazy"`, `decoding="async"`.
 - Retratos da equipe ficam em `equipe/`, com `object-fit: cover` para preservar o enquadramento quadrado.

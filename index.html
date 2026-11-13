@@ -13,22 +13,22 @@
 <meta property="og:url" content="https://motobonas.com.br/">
 <meta property="og:title" content="MOTOBONAS | Oficina e Peças para Motos">
 <meta property="og:description" content="Entra moto. Sai máquina. Oficina especializada e peças em Fortaleza/CE.">
-<meta property="og:image" content="https://motobonas.com.br/assets/og-image.jpg">
+<meta property="og:image" content="https://motobonas.com.br/assets/og-image-2026.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Motobonas — oficina e peças para motos em Fortaleza">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="MOTOBONAS | Oficina e Peças para Motos">
 <meta name="twitter:description" content="Entra moto. Sai máquina. Oficina especializada e peças em Fortaleza/CE.">
-<meta name="twitter:image" content="https://motobonas.com.br/assets/og-image.jpg">
+<meta name="twitter:image" content="https://motobonas.com.br/assets/og-image-2026.jpg">
 <link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" as="image" href="assets/hero-800.webp" media="(max-width:640px)">
 <link rel="preload" as="image" href="assets/hero-1200.webp" media="(min-width:641px)">
 <script>document.documentElement.className+=' js';</script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"AutoRepair","@id":"https://motobonas.com.br/#oficina","name":"Moto Bonas Peças Acessórios Serviços","description":"Oficina especializada em motos de média e alta cilindrada e loja de peças originais em Fortaleza/CE.","telephone":"+55-85-99400-2002","url":"https://motobonas.com.br","image":"https://motobonas.com.br/assets/og-image.jpg","logo":"https://motobonas.com.br/assets/logo-2026-320.webp","priceRange":"$$","foundingDate":"2004-05-05","currenciesAccepted":"BRL","address":{"@type":"PostalAddress","streetAddress":"Rua 24 de Maio, 1102","addressLocality":"Fortaleza","addressRegion":"CE","postalCode":"60020-000","addressCountry":"BR"},"geo":{"@type":"GeoCoordinates","latitude":-3.7312172,"longitude":-38.5334497},"hasMap":"https://www.google.com/maps/search/?api=1&query=Moto+Bonas+Rua+24+de+Maio+1102+Centro+Fortaleza","areaServed":{"@type":"City","name":"Fortaleza"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"sameAs":["https://www.instagram.com/moto_bonas","https://www.mercadolivre.com.br/pagina/motobonas"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.6","reviewCount":"114"}}
+{"@context":"https://schema.org","@type":"AutoRepair","@id":"https://motobonas.com.br/#oficina","name":"Moto Bonas Peças Acessórios Serviços","description":"Oficina especializada em motos de média e alta cilindrada e loja de peças originais em Fortaleza/CE.","telephone":"+55-85-99400-2002","url":"https://motobonas.com.br","image":"https://motobonas.com.br/assets/og-image-2026.jpg","logo":"https://motobonas.com.br/assets/logo-mb-dark-800.webp","priceRange":"$$","foundingDate":"2004-05-05","currenciesAccepted":"BRL","address":{"@type":"PostalAddress","streetAddress":"Rua 24 de Maio, 1102","addressLocality":"Fortaleza","addressRegion":"CE","postalCode":"60020-000","addressCountry":"BR"},"geo":{"@type":"GeoCoordinates","latitude":-3.7312172,"longitude":-38.5334497},"hasMap":"https://www.google.com/maps/search/?api=1&query=Moto+Bonas+Rua+24+de+Maio+1102+Centro+Fortaleza","areaServed":{"@type":"City","name":"Fortaleza"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"17:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"sameAs":["https://www.instagram.com/moto_bonas","https://www.mercadolivre.com.br/pagina/motobonas"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.6","reviewCount":"114"}}
 </script>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -75,7 +75,14 @@ header{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:c
   padding:20px clamp(20px,4vw,60px);transition:.4s;border-bottom:1px solid transparent}
 header.scrolled{background:rgba(0,0,0,.9);backdrop-filter:blur(12px);border-bottom-color:var(--line-soft)}
 .brand{display:flex;align-items:center;gap:14px}
-.brand img{height:46px;width:auto;object-fit:contain;filter:invert(1) hue-rotate(180deg)}
+.brand img{height:clamp(20px,3vw,32px);width:auto;object-fit:contain}
+.brand .lg-light{display:none}
+img.lg-light{display:none}
+html[data-theme="light"] img.lg-dark{display:none}
+html[data-theme="light"] img.lg-light{display:block}
+/* menu móvel é sempre escuro: usa sempre a logo clara */
+html[data-theme="light"] .mnav-brand img.lg-dark{display:block}
+html[data-theme="light"] .mnav-brand img.lg-light{display:none}
 .brand .bt{font-size:12px;font-weight:400;letter-spacing:.24em;line-height:1.6}
 .brand .bt b{color:var(--accent);font-weight:500}
 nav.desk{display:flex;gap:36px;font-size:12px;font-weight:400;letter-spacing:.2em}
@@ -245,7 +252,7 @@ footer{border-top:1px solid var(--line);padding:70px 0 44px}
 .foot-grid{display:grid;grid-template-columns:1.2fr .8fr 1fr;gap:clamp(24px,5vw,70px);margin:40px 0 44px;align-items:start}
 .foot-grid .m{font-size:11px;letter-spacing:.2em;color:var(--dim);line-height:2.2}
 .foot-grid .m b{color:var(--accent);font-weight:500}
-.fcol img{margin-bottom:20px;height:auto;max-width:150px;filter:invert(1) hue-rotate(180deg)}
+.fcol img{margin-bottom:20px;height:auto;max-width:190px}
 .fh{font-size:10px;letter-spacing:.26em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
 .fcol a{display:block;font-size:12px;letter-spacing:.14em;color:var(--dim);padding:7px 0;text-transform:uppercase;transition:.25s}
 .fcol a:hover{color:var(--accent)}
@@ -292,7 +299,8 @@ html[data-theme="light"]{--bg:#ffffff;--bg2:#f4f4f3;--ink:#101010;--dim:#5d5d5d;
   --line:rgba(0,0,0,.14);--line-soft:rgba(0,0,0,.07)}
 html[data-theme="light"] header{background:rgba(255,255,255,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line-soft)}
 html[data-theme="light"] header.scrolled{background:rgba(255,255,255,.94)}
-html[data-theme="light"] .brand img{filter:none}
+html[data-theme="light"] .brand .lg-dark{display:none}
+html[data-theme="light"] .brand .lg-light{display:block}
 html[data-theme="light"] .hero{color:#fff}
 html[data-theme="light"] .hero h1{color:#fff}
 html[data-theme="light"] .hero .lead{color:rgba(255,255,255,.74)}
@@ -331,7 +339,7 @@ html[data-theme="light"] .status.aberto{color:#0f7a3d}
     align-items:center;justify-content:center;gap:32px;opacity:0;pointer-events:none;transition:.4s}
   .mnav.open{opacity:1;pointer-events:auto}
   .mnav a{font-weight:300;font-size:34px;text-transform:uppercase;letter-spacing:.06em}
-  .mnav-brand img{width:132px;height:auto;object-fit:contain;margin-bottom:6px;filter:invert(1) hue-rotate(180deg)}
+  .mnav-brand img{width:auto;height:34px;object-fit:contain;margin-bottom:6px}
   .mnav a.on{color:var(--accent)}
   body.menu-open{overflow:hidden}
   body.menu-open header{z-index:80;background:transparent;border-bottom-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
@@ -362,7 +370,8 @@ html[data-theme="light"] .status.aberto{color:#0f7a3d}
 
 <header id="hdr">
   <a class="brand" href="#topo" aria-label="Motobonas - início">
-    <img src="assets/logo-2026-160.webp" srcset="assets/logo-2026-160.webp 160w, assets/logo-2026-320.webp 320w" sizes="80px" alt="Moto Bonas - Oficina e Moto Peças" width="80" height="46">
+    <img class="lg-dark" src="assets/logo-mb-dark-400.webp" srcset="assets/logo-mb-dark-400.webp 400w, assets/logo-mb-dark-800.webp 800w" sizes="320px" alt="Moto Bonas - Oficina e Moto Peças" width="400" height="39">
+    <img class="lg-light" src="assets/logo-mb-light-400.webp" srcset="assets/logo-mb-light-400.webp 400w, assets/logo-mb-light-800.webp 800w" sizes="320px" alt="" aria-hidden="true" width="400" height="39">
   </a>
   <nav class="desk" aria-label="Navegação principal">
     <a href="#oficina">A OFICINA</a>
@@ -382,7 +391,10 @@ html[data-theme="light"] .status.aberto{color:#0f7a3d}
   </div>
 </header>
 <nav class="mnav" id="mnav" aria-label="Menu móvel">
-  <a href="#topo" class="mnav-brand" aria-label="Motobonas - início"><img src="assets/logo-2026-320.webp" alt="Moto Bonas - Oficina e Moto Peças" width="132" height="76"></a>
+  <a href="#topo" class="mnav-brand" aria-label="Motobonas - início">
+    <img class="lg-dark" src="assets/logo-mb-dark-800.webp" alt="Moto Bonas - Oficina e Moto Peças" width="800" height="79">
+    <img class="lg-light" src="assets/logo-mb-light-800.webp" alt="" aria-hidden="true" width="800" height="79">
+  </a>
   <a href="#oficina">A oficina</a><a href="#servicos">Serviços</a><a href="#pecas">Peças</a><a href="#sobre">Sobre</a><a href="#equipe">Equipe</a><a href="#contato">Contato</a>
   <a class="on" href="https://wa.me/5585994002002?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Motobonas." target="_blank" rel="noopener" data-wa>WhatsApp</a>
 </nav>
@@ -596,6 +608,10 @@ html[data-theme="light"] .status.aberto{color:#0f7a3d}
           <div class="info"><h3>Felipe</h3><p>Mecânico</p></div>
         </article>
         <article class="team-card rise">
+          <img src="equipe/Julia%20-%20Estoquista.png" width="400" height="400" alt="Julia, estoquista da Moto Bonas" loading="lazy" decoding="async">
+          <div class="info"><h3>Julia</h3><p>Estoquista</p></div>
+        </article>
+        <article class="team-card rise">
           <img src="equipe/Maicon%20-%20Chefe%20de%20Oficina.png" width="400" height="400" alt="Maicon, chefe de oficina da Moto Bonas" loading="lazy" decoding="async">
           <div class="info"><h3>Maicon</h3><p>Chefe de oficina</p></div>
         </article>
@@ -687,7 +703,7 @@ html[data-theme="light"] .status.aberto{color:#0f7a3d}
   <div class="wrap">
     <div class="foot-grid">
       <div class="fcol">
-        <img src="assets/logo-2026-320.webp" alt="Motobonas" width="150" height="86" loading="lazy">
+        <img src="assets/logo-mb-dark-800.webp" alt="Motobonas" width="400" height="39" loading="lazy">
         <p class="m"><b>MOTOBONAS</b> · PEÇAS E ACESSÓRIOS<br>OFICINA ESPECIALIZADA · FORTALEZA/CE<br>DESDE 2004</p>
       </div>
       <nav class="fcol" aria-label="Navegação do rodapé">
